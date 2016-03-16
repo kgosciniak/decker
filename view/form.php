@@ -21,6 +21,7 @@ a:visited {
 </head>
 
 <body>
+<script type='text/javascript' src='http://www.bu.edu/tech/wp-includes/js/jquery/jquery.js?ver=1.11.1'></script>
 <?php if($_SERVER['REQUEST_METHOD'] == 'POST') {
 	// XXX: do i actually have to make a new one?
 	$_controller = new Controller();
