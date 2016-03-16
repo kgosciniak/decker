@@ -1,5 +1,24 @@
 <html>
+<head>
 <title>Decker</title>
+
+<style type="text/css">
+table#cards th {
+    color: white;
+    background-color: black;
+}
+table#cards tr:nth-child(even) {
+    background-color: #eee;
+}
+table#cards tr:nth-child(odd) {
+   background-color:#fff;
+}
+a:visited {
+	color: #0000FF;
+}
+</style>
+<base target="_blank" />
+</head>
 
 <body>
 <?php if($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -11,8 +30,8 @@
 ?>
 
 <form name="deckForm" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-<div style="overflow: auto; width:420px; height:700px; float:left"><table>
-	<tr><td>In Pool</td><td>Index</td><td>Name</td><td>Mana Cost</td></tr>
+<div style="overflow: auto; width:420px; height:700px; float:left"><table id="cards" class="searchable sortable"><thead>
+	<tr><th>In Pool</th><th>Index</th><th>Name</th><th>Mana Cost</th></tr></thead><tbody>
 	<?php 
 		
 		foreach ($cards as $index => $card) {
@@ -38,7 +57,7 @@
 		}
 
 	?>
-</table></div>
+</tbody></table></div>
 
 <div style="float:left">
 Deck size<br>
